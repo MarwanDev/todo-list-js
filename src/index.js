@@ -10,5 +10,5 @@ addTaskBtn.addEventListener('click', () => {
 
 const clearBtn = document.getElementById('clearBtn');
 clearBtn.addEventListener('click', () => {
-  tasks.clearComplete(); 
+  tasks.clearComplete();
 });
