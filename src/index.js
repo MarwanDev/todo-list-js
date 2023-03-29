@@ -1,30 +1,14 @@
 import './styles/main.scss';
+import Tasks from './tasks.js';
 
-const todoTasks = [
-  {
-    index: 1,
-    desc: 'Complete MV Task',
-    isComplete: false,
-  },
-  {
-    index: 2,
-    desc: 'Complete MV Task',
-    isComplete: false,
-  },
-];
+const tasks = new Tasks();
+const addTaskBtn = document.getElementById('addBtn');
 
-const tasksList = document.getElementById('listContainer');
+addTaskBtn.addEventListener('click', () => {
+  tasks.addTask();
+});
 
-const tasksDisplay = () => {
-  todoTasks.forEach((task) => {
-    const tasksHtml = (index, desc) => `        <div class="task-container">
-    <input type="checkbox" id="checkBox-${index}"></input>
-    <h2 class="task-desc" id="taskDesc">${desc}</h2>
-    <span>&#8942;</span> 
-    </div>`;
-    const htmlToAdd = tasksHtml(task.index, task.desc, task.isComplete);
-    tasksList.insertAdjacentHTML('afterbegin', htmlToAdd);
-  });
-};
-
-tasksDisplay();
+const clearBtn = document.getElementById('clearBtn');
+clearBtn.addEventListener('click', () => {
+  tasks.clearComplete();
+});
