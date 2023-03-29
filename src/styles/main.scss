@@ -80,7 +80,8 @@ body {
   margin-left: 10px;
   font-size: 16px;
   width: 430px;
-  text-align: left;
+  background-color: $secondary-color;
+  border: none;
 }
 
 .task-container span {

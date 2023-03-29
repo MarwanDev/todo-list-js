@@ -29,7 +29,7 @@ export default class Tasks {
     this.tasksArray.forEach((task, index) => {
       this.tasksHtml = (desc) => `        <div class="task-container">
       <input type="checkbox" id="checkBox"></input>
-      <h2 class="task-desc" id="taskDesc">${desc}</h2>
+      <input class="task-desc" type="text" id="taskDesc" value="${desc}"</input>
       <span id="removeBtn">&#8942;</span> 
       </div>`;
       const htmlToAdd = this.tasksHtml(task.desc, task.isComplete);
@@ -45,6 +45,10 @@ export default class Tasks {
       });
       this.removeBtn = document.getElementById('removeBtn');
       this.removeBtn.onclick = () => this.removeTask(index);
+      this.taskDescription = document.getElementById('taskDesc');
+      this.taskDescription.addEventListener('change', () => {
+        this.editTask(index);
+      });
     });
   }
 
@@ -63,6 +67,11 @@ export default class Tasks {
     }
     this.tasksList.innerHTML = '';
     this.tasksDisplay();
+    this.saveToLocalStorage();
+  }
+
+  editTask = (index) => {
+    this.tasksArray[index].desc = this.taskDescription.value;
     this.saveToLocalStorage();
   }
 }
