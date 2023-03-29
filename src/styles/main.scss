@@ -69,11 +69,13 @@ body {
 .todo-list-container {
   display: flex;
   flex-direction: column;
+  padding-top: 10px;
 }
 
 .task-container {
   display: flex;
   flex-direction: row;
+  margin-bottom: 10px;
 }
 
 .task-desc {

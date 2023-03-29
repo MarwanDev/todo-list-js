@@ -60,11 +60,7 @@ export default class Tasks {
   };
 
   clearComplete = () => {
-    for (let i = 0; i < this.tasksArray.length; i += 1) {
-      if (this.tasksArray[i].isComplete) {
-        this.tasksArray.splice(i, 1);
-      }
-    }
+    this.tasksArray = this.tasksArray.filter((task) => task.isComplete === false);
     this.tasksList.innerHTML = '';
     this.tasksDisplay();
     this.saveToLocalStorage();
