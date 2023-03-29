@@ -55,7 +55,7 @@ export default class Tasks {
     this.saveToLocalStorage();
   };
 
-  clearComplete = () => {
+  clearComplete = () => { 
     for (let i = 0; i < this.tasksArray.length; i += 1) {
       if (this.tasksArray[i].isComplete) {
         this.tasksArray.splice(i, 1);
