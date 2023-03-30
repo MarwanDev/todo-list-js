@@ -30,11 +30,16 @@ export default class Tasks {
       this.tasksHtml = (desc) => `        <div class="task-container">
       <input type="checkbox" id="checkBox"></input>
       <input class="task-desc" type="text" id="taskDesc" value="${desc}"</input>
-      <span id="removeBtn">&#8942;</span> 
+      <button id="removeBtn">x</button> 
       </div>`;
       const htmlToAdd = this.tasksHtml(task.desc, task.isComplete);
       this.tasksList.insertAdjacentHTML('afterbegin', htmlToAdd);
       this.checkBox = document.getElementById('checkBox');
+      if (this.tasksArray[index].isComplete === true) {
+        this.checkBox.checked = true;
+      } else {
+        this.checkBox.checked = false;
+      }
       this.checkBox.addEventListener('change', (event) => {
         if (event.currentTarget.checked) {
           this.tasksArray[index].isComplete = true;
