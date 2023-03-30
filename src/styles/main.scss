@@ -57,6 +57,7 @@ body {
   border: none;
   background-color: $secondary-color;
   padding-bottom: 5px;
+  font-size: 18px;
 }
 
 .add-btn {
@@ -64,6 +65,7 @@ body {
   border: none;
   align-self: flex-end;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .todo-list-container {
@@ -80,15 +82,10 @@ body {
 
 .task-desc {
   margin-left: 10px;
-  font-size: 16px;
-  width: 430px;
+  font-size: 24px;
+  width: 410px;
   background-color: $secondary-color;
   border: none;
-}
-
-.task-container span {
-  text-align: right;
-  align-self: center;
 }
 
 .clear-btn {
@@ -99,10 +96,19 @@ body {
   cursor: pointer;
   padding-top: 20px;
   padding-bottom: 20px;
+  font-size: 20px;
+}
+
+#removeBtn {
+  background-color: $secondary-color;
+  border: none;
+  align-self: center;
+  cursor: pointer;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 768px) {
   .task-desc {
-    width: 330px;
+    width: 315px;
   }
 }

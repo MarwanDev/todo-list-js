@@ -30,7 +30,7 @@ export default class Tasks {
       this.tasksHtml = (desc) => `        <div class="task-container">
       <input type="checkbox" id="checkBox"></input>
       <input class="task-desc" type="text" id="taskDesc" value="${desc}"</input>
-      <span id="removeBtn">&#8942;</span> 
+      <button id="removeBtn">x</button> 
       </div>`;
       const htmlToAdd = this.tasksHtml(task.desc, task.isComplete);
       this.tasksList.insertAdjacentHTML('afterbegin', htmlToAdd);
