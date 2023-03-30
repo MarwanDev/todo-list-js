@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "Frontend environment for building JavaScript applications",
   "main": "index.js",
+  "repository": {
+    "url": "git+https://github.com/MarwanDev/todo-list-js.git"
+  },
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack serve"
+    "build": "webpack --mode=development",
+    "dev": "webpack serve",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +24,7 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.27.5",
+    "gh-pages": "^5.0.0",
     "hint": "^7.1.7",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.49.9",
