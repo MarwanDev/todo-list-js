@@ -35,6 +35,11 @@ export default class Tasks {
       const htmlToAdd = this.tasksHtml(task.desc, task.isComplete);
       this.tasksList.insertAdjacentHTML('afterbegin', htmlToAdd);
       this.checkBox = document.getElementById('checkBox');
+      if (this.tasksArray[index].isComplete === true) {
+        this.checkBox.checked = true;
+      } else {
+        this.checkBox.checked = false;
+      }
       this.checkBox.addEventListener('change', (event) => {
         if (event.currentTarget.checked) {
           this.tasksArray[index].isComplete = true;
